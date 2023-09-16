@@ -40,7 +40,7 @@ const Page = async ({ params }: PageProps) => {
     });
   }
 
-  if (!post && !cachedPost) return notFound();
+  
 
   return (
     <div className="h-full flex flex-col sm:flex-row items-center sm:items-start justify-between">
