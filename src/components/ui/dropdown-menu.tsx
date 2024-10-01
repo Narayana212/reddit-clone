@@ -23,6 +23,15 @@ const DropdownMenuSubTrigger = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubTrigger> & {
     inset?: boolean
   }
+/**
+ * Renders a customizable SubTrigger component for a dropdown menu.
+ * @param {Object} props - The component props.
+ * @param {string} [props.className] - Additional CSS classes to apply to the component.
+ * @param {boolean} [props.inset] - Whether to apply left padding for inset appearance.
+ * @param {React.ReactNode} props.children - The content to render inside the SubTrigger.
+ * @param {React.Ref} ref - The ref to attach to the SubTrigger component.
+ * @returns {React.ReactElement} A DropdownMenuPrimitive.SubTrigger component with applied styles and functionality.
+ */
 >(({ className, inset, children, ...props }, ref) => (
   <DropdownMenuPrimitive.SubTrigger
     ref={ref}
@@ -43,6 +52,13 @@ DropdownMenuSubTrigger.displayName =
 const DropdownMenuSubContent = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.SubContent>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubContent>
+/**
+ * Renders a SubContent component for a dropdown menu with customizable styling and animations.
+ * @param {Object} props - The properties passed to the component.
+ * @param {string} [props.className] - Additional CSS class names to apply to the component.
+ * @param {React.Ref} ref - A ref object to access the underlying DOM element.
+ * @returns {JSX.Element} A DropdownMenuPrimitive.SubContent component with applied styles and animations.
+ */
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.SubContent
     ref={ref}
@@ -59,6 +75,14 @@ DropdownMenuSubContent.displayName =
 const DropdownMenuContent = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>
+/**
+ * Renders a dropdown menu content component with customizable styling and animations.
+ * @param {Object} props - The component props.
+ * @param {string} [props.className] - Additional CSS class names to apply to the content.
+ * @param {number} [props.sideOffset=4] - The offset from the side of the anchor element.
+ * @param {React.Ref} ref - The ref to be forwarded to the content element.
+ * @returns {React.ReactElement} A DropdownMenuPrimitive.Content component wrapped in a portal.
+ */
 >(({ className, sideOffset = 4, ...props }, ref) => (
   <DropdownMenuPrimitive.Portal>
     <DropdownMenuPrimitive.Content
@@ -79,7 +103,16 @@ const DropdownMenuItem = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
     inset?: boolean
   }
->(({ className, inset, ...props }, ref) => (
+```
+/**
+ * Renders a customizable dropdown menu item component
+ * @param {Object} props - The component props
+ * @param {string} [props.className] - Additional CSS classes to apply to the item
+ * @param {boolean} [props.inset] - Whether to apply left padding for inset styling
+ * @param {React.Ref} ref - Ref object for the dropdown item
+ * @returns {React.ReactElement} A styled dropdown menu item
+ */
+```>(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
@@ -95,6 +128,15 @@ DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName
 const DropdownMenuCheckboxItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.CheckboxItem>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.CheckboxItem>
+/**
+ * Renders a checkbox item for a dropdown menu with customizable styling and behavior
+ * @param {Object} props - The component props
+ * @param {string} props.className - Additional CSS classes to apply to the component
+ * @param {React.ReactNode} props.children - The content to be rendered inside the checkbox item
+ * @param {boolean} props.checked - Whether the checkbox is checked or not
+ * @param {React.Ref} ref - Ref object for the checkbox item
+ * @returns {JSX.Element} A styled and functional checkbox item for use in a dropdown menu
+ */
 >(({ className, children, checked, ...props }, ref) => (
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
@@ -119,6 +161,14 @@ DropdownMenuCheckboxItem.displayName =
 const DropdownMenuRadioItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.RadioItem>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.RadioItem>
+/**
+ * Renders a custom radio item component for a dropdown menu.
+ * @param {Object} props - The component props.
+ * @param {string} [props.className] - Additional CSS class names for the radio item.
+ * @param {React.ReactNode} props.children - The content to be rendered inside the radio item.
+ * @param {React.Ref} ref - A ref to be forwarded to the underlying DOM element.
+ * @returns {React.ReactElement} A styled radio item component for use in dropdown menus.
+ */
 >(({ className, children, ...props }, ref) => (
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
@@ -135,6 +185,14 @@ const DropdownMenuRadioItem = React.forwardRef<
     </span>
     {children}
   </DropdownMenuPrimitive.RadioItem>
+/**
+ * A customizable dropdown menu label component.
+ * @param {Object} props - The component props.
+ * @param {string} [props.className] - Additional CSS class names for the label.
+ * @param {boolean} [props.inset] - Whether to apply left padding for inset styling.
+ * @param {React.Ref} ref - A ref to be forwarded to the underlying label element.
+ * @returns {React.ReactElement} A styled dropdown menu label component.
+ */
 ))
 DropdownMenuRadioItem.displayName = DropdownMenuPrimitive.RadioItem.displayName
 
@@ -159,6 +217,13 @@ DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName
 const DropdownMenuSeparator = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>
+/**
+ * Creates a separator component for a dropdown menu
+ * @param {Object} props - The props object
+ * @param {string} [props.className] - Additional CSS class names for styling
+ * @param {React.Ref} ref - Ref object for the separator element
+ * @returns {React.ReactElement} A styled separator element for use in a dropdown menu
+ */
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
@@ -168,6 +233,12 @@ const DropdownMenuSeparator = React.forwardRef<
 ))
 DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName
 
+/**
+ * Renders a shortcut span element for a dropdown menu item
+ * @param {React.HTMLAttributes<HTMLSpanElement>} props - The HTML attributes for the span element
+ * @param {string} [props.className] - Additional CSS classes to apply to the span element
+ * @returns {JSX.Element} A span element with applied classes and props
+ */
 const DropdownMenuShortcut = ({
   className,
   ...props
