@@ -103,6 +103,15 @@ DialogTitle.displayName = DialogPrimitive.Title.displayName
 const DialogDescription = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
+```
+/**
+ * A React component that renders a description for a dialog using DialogPrimitive.Description
+ * @param {Object} props - The properties passed to the component
+ * @param {string} [props.className] - Additional CSS class names to apply to the description
+ * @param {React.Ref} ref - A ref to be forwarded to the underlying DialogPrimitive.Description component
+ * @returns {React.ReactElement} A styled description component for use in dialogs
+ */
+```
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
