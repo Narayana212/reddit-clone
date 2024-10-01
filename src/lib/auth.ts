@@ -57,4 +57,8 @@ export const authOptions: NextAuthOptions = {
   },
 }
 
+/**
+ * Retrieves the authenticated session using server-side authentication options.
+ * @returns {Promise<Session | null>} A promise that resolves to the authenticated session object if available, or null if no session exists.
+ */
 export const getAuthSession = () => getServerSession(authOptions)
