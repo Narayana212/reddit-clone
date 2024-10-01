@@ -14,7 +14,13 @@ const Label = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
     VariantProps<typeof labelVariants>
->(({ className, ...props }, ref) => (
+/**
+ * A functional component that renders a Label primitive with customizable className and additional props
+ * @param {Object} props - The props object
+ * @param {string} [props.className] - Additional CSS class name for styling
+ * @param {React.Ref} ref - Ref object for accessing the underlying DOM element
+ * @returns {React.ReactElement} A Label primitive component with applied styles and props
+ */>(({ className, ...props }, ref) => (
   <LabelPrimitive.Root
     ref={ref}
     className={cn(labelVariants(), className)}
